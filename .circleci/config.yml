@@ -41,7 +41,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Deploying application
+          name: Deploying application1
           command: |
             mkdir test-results
             pipenv run python application.py
