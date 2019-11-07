@@ -16,12 +16,12 @@ response = urlopen(url)
 data = json.load(response)
 
 # Accessing items from dictionary using key( get method)
-Response_IP=data.get['ip']
-Response_city=data.get['city']
-Response_region=data.get['region']
-Response_country= data.get['country']
-Response_org=data.get['org']
-Response_postal=data.get['postal']
+Response_IP=data.get("ip")
+Response_city=data.get("city")
+Response_region=data.get("region")
+Response_country= data.get("countryi")
+Response_org=data.get("orgi")
+Response_postal=data.get("postali")
 
 print('Application Response IP detail\n') 
 print('Response_IP : {0}'.format(Response_IP))
