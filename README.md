@@ -4,6 +4,7 @@ Input: json request
 Url: http://ipinfo.io/json 
 
 Response: 
+
 { 
 
   "ip": "27.5.240.224", 
@@ -31,12 +32,8 @@ Application code to get it’s own ip address
 
 Automation: 
 Run unit test case on very commit in Circle CI 
-
  
- 
- 
-
-Prerequisites: 
+ Prerequisites: 
 
  Github - Source code manager 
 
