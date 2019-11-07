@@ -18,7 +18,7 @@ jobs:
             sudo pip install pipenv
             pipenv install
 
-  test:
+  test1:
     docker:
       - image: circleci/python:3.6.4
     steps:
@@ -40,4 +40,4 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test
+      - test1
