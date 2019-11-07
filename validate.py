@@ -10,9 +10,10 @@ class ApplicateionTest(unittest.TestCase):
         print(response)
         try:
             print("Hostname_IP :  ",response['ip'])
+            self.assertRegex(response['ip'],r'^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$')
         except:
             print("Please check your hostname type")
-        self.assertRegex(response['ip'],r'^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$')
+        
 
 # Running the test
 if __name__ == '__main__':
