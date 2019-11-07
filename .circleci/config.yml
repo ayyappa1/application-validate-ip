@@ -18,7 +18,9 @@ jobs:
             sudo pip install pipenv
             pipenv install
 
-      # run tests!
+  test:
+    steps:
+    
       - run:
           name: unittesting
           command: |
@@ -31,4 +33,9 @@ jobs:
       - store_artifacts:
           path: test-results/
           destination: tr1
-
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
