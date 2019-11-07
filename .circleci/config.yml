@@ -18,7 +18,7 @@ jobs:
             sudo pip install pipenv
             pipenv install
 
-  test1:
+  test:
     docker:
       - image: circleci/python:3.6.4
     steps:
@@ -28,6 +28,7 @@ jobs:
           command: |
             pipenv run python -m unittest validate.py
             pipenv run python application.py
+            mkdir test-results
 
       - store_test_results:
           path: test-results/
@@ -35,9 +36,28 @@ jobs:
       - store_artifacts:
           path: test-results/
           destination: tr1
+   deploy:
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout
+      - run:
+          name: unittesting
+          command: |
+            pipenv run python -m unittest validate.py
+            pipenv run python application.py
+            mkdir test-results
+
+      - store_test_results:
+          path: test-results/
+
+      - store_artifacts:
+          path: test-results/
+          destination: tr1          
 workflows:
   version: 2
-  build_and_test:
+  build-test-and-deploy:
     jobs:
       - build
-      - test1
+      - test
+      - deploy
