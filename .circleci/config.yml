@@ -20,7 +20,7 @@ jobs:
 
       # run tests!
       - run:
-          name: run tests
+          name: unittesting
           command: |
             pipenv run python -m unittest validate.py
             pipenv run python application.py
