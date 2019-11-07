@@ -2,7 +2,6 @@ import json
 from urllib.request import urlopen
 
 url = 'http://ipinfo.io/json'
-#url = 'http://ipinfo.io/yaml'
 try:
    url[-4:] == "json"
 
