@@ -1,0 +1,31 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.4
+
+    working_directory: ~/workspace
+
+    steps:
+      - checkout
+      - run: mkdir test-results
+      - run:
+          name: install application dependencies
+          command: |
+            sudo pip install pipenv
+            pipenv install
+
+      # run tests!
+      - run:
+          name: run tests
+          command: |
+            pipenv run python -m unittest validate.py
+            pipenv run python application.py
+
+      - store_test_results:
+          path: test-results/
+
+      - store_artifacts:
+          path: test-results/
+          destination: tr1
+
