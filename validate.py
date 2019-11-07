@@ -7,6 +7,7 @@ class ApplicateionTest(unittest.TestCase):
 # Returns True if host ip address matches in respose ip address. 
     def test_ip_addr(self):
         response = json.load(urlopen('http://ipinfo.io/json'))
+        print(response)
         try:
             response['ip'] == "60.243.92.23"
 
