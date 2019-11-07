@@ -9,8 +9,7 @@ class ApplicateionTest(unittest.TestCase):
         response = json.load(urlopen('http://ipinfo.io/json'))
         print(response)
         try:
-            response['ip'] == "60.243.92.23"
-
+            print("Hostname_IP :  ",response['ip'])
         except:
             print("Please check your hostname type")
         self.assertRegex(response['ip'],r'^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$')
