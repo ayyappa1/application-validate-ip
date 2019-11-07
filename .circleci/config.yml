@@ -26,10 +26,9 @@ jobs:
       - run:
           name: unittesting
           command: |
-            pipenv run python -m unittest validate.py
-            pipenv run python application.py
             mkdir test-results
-
+            pipenv run python -m unittest validate.py
+            
       - store_test_results:
           path: test-results/
 
@@ -44,10 +43,9 @@ jobs:
       - run:
           name: unittesting
           command: |
-            pipenv run python -m unittest validate.py
-            pipenv run python application.py
             mkdir test-results
-
+            pipenv run python application.py
+            
       - store_test_results:
           path: test-results/
 
