@@ -8,7 +8,10 @@ jobs:
 
     steps:
       - checkout
-      - run: mkdir test-results
+      - run: 
+          name: run tests
+          command: |
+            mkdir test-results
       - run:
           name: install application dependencies
           command: |
