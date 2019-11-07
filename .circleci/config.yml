@@ -41,7 +41,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: unittesting
+          name: Deploying application
           command: |
             mkdir test-results
             pipenv run python application.py
