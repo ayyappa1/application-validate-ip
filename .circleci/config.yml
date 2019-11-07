@@ -19,6 +19,8 @@ jobs:
             pipenv install
 
   test:
+    docker:
+      - image: circleci/python:3.6.4
     steps:
     
       - run:
